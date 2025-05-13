@@ -24,7 +24,7 @@ export class CatsService {
   }
 
   findOne(id: string) {
-    return this.catModel.findById(id).exec();
+    return this.catModel.findById(id).populate("user_id").exec();
   }
 
   update(id: number, updateCatDto: UpdateCatDto) {
